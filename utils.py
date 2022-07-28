@@ -1,9 +1,4 @@
 
-import cv2
-import numpy as np
-import skimage.morphology as mph
-from skimage.measure import label, regionprops
-import io
 
 color_map = {
  '0': [0, 0, 0],
@@ -15,9 +10,3 @@ color_map = {
  '6': [255, 0, 0],
  '7': [0, 0, 255]
 }
-
-
-def get_bytes_value(image):
- img_byte_arr = io.BytesIO()
- image.save(img_byte_arr, format='JPEG')
- return img_byte_arr.getvalue()

@@ -2,9 +2,7 @@
 
 import requests
 import streamlit as st
-from PIL import Image
 from utils import *
-import io
 
 OUTPUT = {
     "mask" : "segmentation mask",
@@ -24,7 +22,6 @@ imageSrc = st.sidebar.file_uploader("Sélectionner une image")
 outputDisplay = ("segmentation mask", "bounding boxes")
 outputVerb = ("mask", "boxes")
 
-#output = st.sidebar.selectbox("Choix du type de résultat", [i for i in OUTPUT.keys()])
 output = st.sidebar.multiselect("Choix du type de résultat", outputVerb, format_func=lambda x: OUTPUT[x])
 
 # displays a button
